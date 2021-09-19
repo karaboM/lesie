@@ -14,21 +14,11 @@
  *      limitations under the License.
  */
 
-package org.lesie.loader.util;
+package com.lesie.framework.annotations;
 
-import java.util.logging.Logger;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public class LesieLogger {
-
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
-
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
-    }
-
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
-    }
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ExitPoint {
 }

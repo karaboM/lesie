@@ -14,21 +14,13 @@
  *      limitations under the License.
  */
 
-package org.lesie.loader.util;
+package org.lesie.framework;
+import java.util.List;
+import java.util.Map;
 
-import java.util.logging.Logger;
 
-public class LesieLogger {
+public interface Bootstrap {
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
+    public void init(Map<String,List<String>> config) throws Exception;
 
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
-    }
-
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
-    }
 }

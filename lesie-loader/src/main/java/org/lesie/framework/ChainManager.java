@@ -13,22 +13,21 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+package org.lesie.framework;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
-package org.lesie.loader.util;
 
-import java.util.logging.Logger;
 
-public class LesieLogger {
+public interface ChainManager {
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
+    public void setConfig(Map<String,List<String>> config)  ;
 
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
-    }
+    public void addProcessor(Processor processor);
 
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
-    }
+    public void addProcessor(Collection<String> processors) throws Exception;
+
+    public void processChain() throws Exception;
+
 }

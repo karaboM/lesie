@@ -14,21 +14,21 @@
  *      limitations under the License.
  */
 
-package org.lesie.loader.util;
+package org.lesie.example.servlet;
 
-import java.util.logging.Logger;
+import com.lesie.framework.request.SharingRequest;
+import org.lesie.example.ShareService;
 
-public class LesieLogger {
+import java.io.IOException;
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
 
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
-    }
+public class ExampleServlet extends javax.servlet.http.HttpServlet {
 
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        SharingRequest sharingRequest = new SharingRequest("w123", "ck1", "e123", "ct1", null);
+        ShareService shareService = new ShareService();
+
+        shareService.shareData(sharingRequest, "extra");
+
     }
 }

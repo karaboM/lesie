@@ -14,21 +14,22 @@
  *      limitations under the License.
  */
 
-package org.lesie.loader.util;
 
-import java.util.logging.Logger;
+package org.lesie.example;
 
-public class LesieLogger {
+import com.lesie.framework.annotations.ExitPoint;
+import com.lesie.framework.annotations.Gate;
+import com.lesie.framework.request.SharingRequest;
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
+@Gate
+public class ShareService {
 
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
+    @ExitPoint
+    public void shareData(SharingRequest sharingRequest, String otherStuff) {
+        doSomething();
     }
 
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
+    private void doSomething(){
+        System.out.println("doSomething");
     }
 }

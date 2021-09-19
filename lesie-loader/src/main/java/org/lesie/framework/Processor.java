@@ -13,22 +13,14 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+package org.lesie.framework;
 
-package org.lesie.loader.util;
+import com.google.common.collect.Multimap;
 
-import java.util.logging.Logger;
+import java.util.List;
+import java.util.Map;
 
-public class LesieLogger {
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
-
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
-    }
-
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
-    }
+public interface Processor<T> {
+    public Map<String,List<String>> process(T config) throws Exception;
 }

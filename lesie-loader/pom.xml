@@ -5,12 +5,13 @@
     <parent>
         <artifactId>lesie</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <version>0.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
     <artifactId>lesie-loader</artifactId>
+    <version>0.3-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -24,12 +25,53 @@
             <artifactId>tomcat-juli</artifactId>
             <version>5.5.12</version>
         </dependency>
-
         <dependency>
             <groupId>org.lesie</groupId>
-            <artifactId>lesie-message</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <artifactId>lesie-api</artifactId>
+            <version>0.3-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.9-RC1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.12.1.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>7.0.26</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
 </project>

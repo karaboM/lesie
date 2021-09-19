@@ -14,21 +14,15 @@
  *      limitations under the License.
  */
 
-package org.lesie.loader.util;
+package com.lesie.framework.exception;
 
-import java.util.logging.Logger;
 
-public class LesieLogger {
+public class SharingException extends Exception{
 
-    private static String LESIE_INFO = "Lesie-Info:";
-    private Logger origLogger;
-
-    public LesieLogger(Logger log) {
-        this.origLogger = log;
+    public SharingException(String message){
+        super(message);
     }
 
-    public void info(String msg) {
-        String finalMsg = LesieLogger.LESIE_INFO + msg;
-        origLogger.info(finalMsg);
-    }
+    public SharingException(){}
+
 }
